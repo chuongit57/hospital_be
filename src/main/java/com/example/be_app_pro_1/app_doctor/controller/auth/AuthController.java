@@ -2,11 +2,7 @@ package com.example.be_app_pro_1.app_doctor.controller.auth;
 
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.be_app_pro_1.app_doctor.constant.AppDoctorConstant.ApiPath;
 import com.example.be_app_pro_1.app_doctor.service.AuthenticationService;
@@ -19,9 +15,9 @@ public class AuthController {
 
 	private final AuthenticationService service;
 
-	@RequestMapping(value = ApiPath.TEST, method = RequestMethod.POST)
-	public String test() {
-		return "Test";
+	@GetMapping(ApiPath.CHECK_AUTH)
+	public ResponseEntity<Boolean> checkToken() {
+		return ResponseEntity.ok(true);
 	}
 
 	@PostMapping(ApiPath.LOGIN)
@@ -36,7 +32,6 @@ public class AuthController {
 		} catch (DuplicateKeyException dke) {
 			return ResponseEntity.badRequest().body(dke.getMessage());
 		}
-
 	}
 
 }

@@ -9,13 +9,26 @@ public class AppDoctorConstant {
 
         public static final String API = PER_FIX + "/api";
 
+        // auth        --------------------
+
         public static final String AUTH = "/auth";
 
         public static final String LOGIN = "/login";
 
         public static final String REGISTER = "/register";
 
+        public static final String CHECK_AUTH = "/check";
+
         public static final String TEST = "/test";
+
+        // department        --------------------
+        public static final String DEPARTMENT = "/department";
+
+        // blood_group        --------------------
+        public static final String BLOOD_GROUP = "/blood_group";
+
+        // doctor
+        public static final String DOCTOR = "/doctor";
 
     }
 
