@@ -1,7 +1,7 @@
 package com.example.be_app_pro_1.app_doctor.service;
 
-import com.example.be_app_pro_1.app_doctor.entity.BloodGroup;
-import com.example.be_app_pro_1.app_doctor.entity.BloodGroupRepository;
+import com.example.be_app_pro_1.app_doctor.entity.BloodGroup.BloodGroup;
+import com.example.be_app_pro_1.app_doctor.entity.BloodGroup.BloodGroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.example.be_app_pro_1.app_doctor.controller.auth;
 
-import com.example.be_app_pro_1.app_doctor.entity.User;
+import com.example.be_app_pro_1.app_doctor.entity.User.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

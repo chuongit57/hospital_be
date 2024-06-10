@@ -42,6 +42,8 @@ public class SecurityConfig {
 			ApiPath.API + ApiPath.AUTH + ApiPath.REGISTER,
 			ApiPath.API + ApiPath.AUTH + ApiPath.LOGIN,
 			ApiPath.API + ApiPath.AUTH + ApiPath.TEST,
+			ApiPath.API + ApiPath.DOCTOR_APPOINTMENT + "/init",
+			ApiPath.API + ApiPath.DOCTOR_APPOINTMENT + "/sign-up",
 			ApiPath.TEST,
 			};
 	private final JwtAuthenticationFilter jwtAuthFilter;

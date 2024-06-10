@@ -30,6 +30,12 @@ public class AppDoctorConstant {
         // doctor
         public static final String DOCTOR = "/doctor";
 
+        // doctor's appointment
+        public static final String DOCTOR_APPOINTMENT = "/doctor-appointment";
+
+        // user book
+        public static final String USER_BOOK = "/user_book";
+
     }
 
 }

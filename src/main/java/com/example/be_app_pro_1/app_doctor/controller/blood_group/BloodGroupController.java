@@ -1,6 +1,9 @@
 package com.example.be_app_pro_1.app_doctor.controller.blood_group;
 
+import java.util.List;
+
 import com.example.be_app_pro_1.app_doctor.constant.AppDoctorConstant;
+import com.example.be_app_pro_1.app_doctor.entity.BloodGroup.BloodGroup;
 import com.example.be_app_pro_1.app_doctor.service.BloodGroupService;
 import com.example.be_app_pro_1.app_doctor.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +21,7 @@ public class BloodGroupController {
     private final BloodGroupService bloodGroupService;
 
     @GetMapping("/all")
-    public ResponseEntity<Object> test() {
+    public ResponseEntity<List<BloodGroup>> test() {
         return ResponseEntity.ok().body(bloodGroupService.getAll());
     }
 

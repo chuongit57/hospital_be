@@ -15,6 +15,7 @@ public class DoctorDTO {
     private String phone;
     private String email;
     private String gender;
-    private String degree;
     private DepartmentDTO department;
+    private String degree;
+    private Double numberOfStars;
 }
