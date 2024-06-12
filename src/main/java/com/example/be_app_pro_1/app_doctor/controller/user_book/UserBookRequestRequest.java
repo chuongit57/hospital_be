@@ -12,11 +12,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserBookRequestRequest {
-
 	private Integer doctorAppointmentId;
-
 	private LocalDate date;
+	private String gender;
+	private String name;
 	private String phone;
 	private int age;
+	private double height;
 	private double weight;
+	private String description;
+	private String detail;
+	private String atc;
 }

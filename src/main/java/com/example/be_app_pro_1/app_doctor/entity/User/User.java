@@ -3,6 +3,7 @@ package com.example.be_app_pro_1.app_doctor.entity.User;
 import java.util.Collection;
 import java.util.List;
 
+import com.example.be_app_pro_1.app_doctor.entity.Doctor.Doctor;
 import com.example.be_app_pro_1.app_doctor.entity.Token.Token;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -40,6 +41,10 @@ public class User implements UserDetails {
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Token> tokens;
+
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "doctor_id")
+	private Doctor doctor;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -130,4 +130,27 @@ public class DoctorAppointmentService {
         return listDoctorAppointmentDTO;
     }
 
+    public List<DoctorAppointment> getUpcomingAppointments(Doctor doctor, LocalDate date) {
+        if (date == null) {
+            date = LocalDate.now();
+        }
+
+        LocalDate currentDate = LocalDate.now();
+        LocalTime currentTime = LocalTime.now();
+        if (currentDate.isEqual(date)) {
+            return doctorAppointmentRepository.findUpcomingAppointments(
+                    DoctorAppointmentStatus.BOOKED,
+                    doctor,
+                    currentDate,
+                    currentTime
+            );
+        } else {
+            return doctorAppointmentRepository.findUpcomingAppointments(
+                    DoctorAppointmentStatus.BOOKED,
+                    doctor,
+                    date
+            );
+        }
+    }
+
 }

@@ -32,4 +32,25 @@ public interface DoctorAppointmentRepository extends JpaRepository<DoctorAppoint
 	List<DoctorAppointment> findFutureAppointmentsForUser(@Param("currentDate") LocalDate currentDate, @Param("user") User user);
 
 	Optional<DoctorAppointment> findByDateAndUserAndDoctorAndStatus(LocalDate date, User customUserDetails, Doctor doctor, DoctorAppointmentStatus doctorAppointmentStatus);
+
+	@Query("SELECT da FROM DoctorAppointment da WHERE da.status = :status " +
+			"AND da.doctor = :doctor " +
+			"AND da.act is null " +
+			"AND da.date >= :currentDate " +
+			"AND (da.date > :currentDate OR da.startTime >= :currentTime)")
+	List<DoctorAppointment> findUpcomingAppointments(
+			@Param("status") DoctorAppointmentStatus status,
+			@Param("doctor") Doctor doctor,
+			@Param("currentDate") LocalDate currentDate,
+			@Param("currentTime") LocalTime currentTime
+	);
+
+	@Query("SELECT da FROM DoctorAppointment da WHERE da.status = :status " +
+			"AND da.doctor = :doctor " +
+			"AND da.date >= :currentDate ")
+	List<DoctorAppointment> findUpcomingAppointments(
+			@Param("status") DoctorAppointmentStatus status,
+			@Param("doctor") Doctor doctor,
+			@Param("currentDate") LocalDate currentDate
+	);
 }

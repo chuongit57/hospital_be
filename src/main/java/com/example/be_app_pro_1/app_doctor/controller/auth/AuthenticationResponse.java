@@ -1,5 +1,6 @@
 package com.example.be_app_pro_1.app_doctor.controller.auth;
 
+import com.example.be_app_pro_1.app_doctor.dto.UserDTO;
 import com.example.be_app_pro_1.app_doctor.entity.User.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -20,5 +21,5 @@ public class AuthenticationResponse {
 	private String refreshToken;
 
 	@JsonProperty("user")
-	private User user;
+	private UserDTO user;
 }

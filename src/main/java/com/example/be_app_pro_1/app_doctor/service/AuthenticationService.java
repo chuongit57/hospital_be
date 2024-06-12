@@ -18,6 +18,7 @@ import com.example.be_app_pro_1.app_doctor.entity.Token.TokenRepository;
 import com.example.be_app_pro_1.app_doctor.entity.User.User;
 import com.example.be_app_pro_1.app_doctor.entity.User.UserRepository;
 import com.example.be_app_pro_1.app_doctor.enums.TokenType;
+import com.example.be_app_pro_1.app_doctor.mapper.UserMapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -31,6 +32,7 @@ public class AuthenticationService {
 	private final PasswordEncoder passwordEncoder;
 	private final _JwtService jwtService;
 	private final AuthenticationManager authenticationManager;
+	private final UserMapper userMapper;
 
 	public Role getRole(String role) {
 		if (role.equals("ADMIN")) {
@@ -86,7 +88,7 @@ public class AuthenticationService {
 		return AuthenticationResponse.builder()
 				.accessToken(jwtToken)
 				.refreshToken(refreshToken)
-				.user(user)
+				.user(userMapper.entityToUserDTO(user))
 				.build();
 	}
 

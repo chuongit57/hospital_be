@@ -31,6 +31,10 @@ public class DoctorAppointmentDoneResponse {
 
 	private User user;
 
+	private String name;
+
+	private String gender;
+
 	private String description;
 
 	private Integer age;

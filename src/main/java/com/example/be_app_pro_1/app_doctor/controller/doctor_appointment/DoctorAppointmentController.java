@@ -46,7 +46,7 @@ public class DoctorAppointmentController {
             @RequestBody DoctorAppointmentSignUpRequest request) {
         if (request.getDepartmentCode() != null) {
             Department department = departmentService.getDepartment(request.getDepartmentCode());
-            return ResponseEntity.ok().body(doctorAppointmentService.getListDoctorAppointmentDTO(request.getDate(), department));
+            return ResponseEntity.ok().body(doctorAppointmentService.getListDoctorAppointmentDTO(request.getDate(),  department));
         }
         return ResponseEntity.ok().body(doctorAppointmentService.getListDoctorAppointmentDTO(request.getDate()));
     }

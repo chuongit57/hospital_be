@@ -5,6 +5,7 @@ import java.time.LocalTime;
 
 import com.example.be_app_pro_1.app_doctor.entity.Doctor.Doctor;
 import com.example.be_app_pro_1.app_doctor.entity.User.User;
+import com.example.be_app_pro_1.app_doctor.enums.DoctorAppointmentAct;
 import com.example.be_app_pro_1.app_doctor.enums.DoctorAppointmentStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
@@ -54,6 +55,10 @@ public class DoctorAppointment {
 	@JoinColumn(name = "user_id")
 	private User user;
 
+	private String name;
+
+	private String gender;
+
 	private String description;
 
 	private Integer age;
@@ -63,5 +68,10 @@ public class DoctorAppointment {
 	private Double height;
 
 	private String phone;
+
+	@Enumerated(EnumType.STRING)
+	private DoctorAppointmentAct act;
+
+	private String detail;
 
 }
